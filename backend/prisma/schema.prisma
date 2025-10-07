@@ -17,25 +17,27 @@ datasource db {
 
 //Criado tabelas
 model Tecnologia {
-  id        Int     @id @default(autoincrement())
+  id        Int       @id @default(autoincrement())
   nome      String
   descricao String
   imagem    String
-  destaque  Boolean @default(false)
+  destaque  Boolean   @default(false)
+  projetos  Projeto[]
 
   //Nome da tabela no banco
   @@map("tecnologias")
 }
 
 model Projeto {
-  id          Int      @id @default(autoincrement())
+  id          Int          @id @default(autoincrement())
   nome        String
   descricao   String
   tipo        String
   imagens     String[]
   nivel       Int
   repositorio String
-  destaque    Boolean  @default(false)
+  destaque    Boolean      @default(false)
+  tecnologias Tecnologia[]
 
   @@map("projetos")
 }

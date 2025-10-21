@@ -1,4 +1,11 @@
 import { Module } from '@nestjs/common';
+import { ProjetoProvider } from './projeto.provider';
+import { ProjetoControllerController } from './projeto.controller';
+import { DbModule } from 'src/db/db.module';
 
-@Module({})
-export class ProjetoModule {}
+@Module({
+  providers: [ProjetoProvider],
+  controllers: [ProjetoControllerController],
+  imports: [DbModule]
+})
+export class ProjetoModule { }

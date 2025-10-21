@@ -10,4 +10,9 @@ export class TecnologiaController {
   async findAll(): Promise<Tecnologia[]> {
     return this.tecnologiaProvide.getAll()
   }
+
+  @Get("destaques")
+  async getEmphasis(): Promise<Tecnologia[]> {
+    return this.tecnologiaProvide.getEmphasis()
+  }
 }

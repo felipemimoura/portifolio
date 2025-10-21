@@ -10,4 +10,13 @@ export class TecnologiaProvider {
     return this.prisma.tecnologia.findMany()
   }
 
+
+  async getEmphasis(): Promise<Tecnologia[]> {
+    return this.prisma.tecnologia.findMany({
+      where: {
+        destaque: true
+      }
+    })
+  }
+
 }
